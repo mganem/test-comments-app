@@ -1,0 +1,10 @@
+<html>
+    {% for comment in comments %}
+        <p>
+            {{ comment.content }}, by <strong>{{ comment.author.firstname }} {{ comment.author.lastname }}</strong> in article <strong>{{ comment.article.id }}</strong>
+            {% if comment.parentComment is not null %}
+                Replied to : <strong>{{ comment.parentComment.author.firstname }} {{ comment.parentComment.author.lastname }}</strong>
+            {% endif %}
+        </p>
+    {% endfor %}
+</html>
